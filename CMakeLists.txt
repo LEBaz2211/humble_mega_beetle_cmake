@@ -22,8 +22,15 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+ament_python_install_package(scripts)
+
+install(PROGRAMS
+  scripts/command_timeout.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(
-  DIRECTORY launch urdf rviz config worlds maps
+  DIRECTORY launch urdf rviz config worlds maps scripts
   DESTINATION share/${PROJECT_NAME}
 )
 

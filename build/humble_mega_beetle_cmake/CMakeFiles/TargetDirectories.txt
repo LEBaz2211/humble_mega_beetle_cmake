@@ -1,9 +1,0 @@
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/uninstall.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/humble_mega_beetle_cmake_uninstall.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/test.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/edit_cache.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/rebuild_cache.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/list_install_components.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/install.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/install/local.dir
-/home/basil/humble_dev_ws/src/humble_mega_beetle_cmake/build/humble_mega_beetle_cmake/CMakeFiles/install/strip.dir
