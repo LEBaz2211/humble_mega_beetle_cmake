@@ -104,21 +104,21 @@ def generate_launch_description():
             remappings=[("odometry/filtered", LaunchConfiguration("odom_topic"))]
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(default_robot_launch_path),
-            condition=UnlessCondition(LaunchConfiguration("custom_robot")),
-            launch_arguments={
-                'base_serial_port': LaunchConfiguration("base_serial_port")
-            }.items()
-        ),
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(default_robot_launch_path),
+        #     condition=UnlessCondition(LaunchConfiguration("custom_robot")),
+        #     launch_arguments={
+        #         'base_serial_port': LaunchConfiguration("base_serial_port")
+        #     }.items()
+        # ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(extra_launch_path),
             condition=IfCondition(LaunchConfiguration("extra")),
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(custom_robot_launch_path),
-            condition=IfCondition(LaunchConfiguration("custom_robot")),
-        )
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(custom_robot_launch_path),
+        #     condition=IfCondition(LaunchConfiguration("custom_robot")),
+        # )
     ])
