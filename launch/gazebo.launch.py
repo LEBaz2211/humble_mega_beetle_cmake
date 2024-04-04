@@ -31,7 +31,7 @@ def generate_launch_description():
     )
 
     world_path = PathJoinSubstitution(
-        [FindPackageShare("humble_mega_beetle_cmake"), "worlds", "obstacles.world"]
+        [FindPackageShare("humble_mega_beetle_cmake"), "worlds", "playground.world"]
     )
 
     description_launch_path = PathJoinSubstitution(
@@ -81,7 +81,7 @@ def generate_launch_description():
             output='screen',
             arguments=[
                 '-topic', 'robot_description', 
-                '-entity', 'linorobot2', 
+                '-entity', 'humble_mega_beetle_cmake', 
                 '-x', LaunchConfiguration('spawn_x'),
                 '-y', LaunchConfiguration('spawn_y'),
                 '-z', LaunchConfiguration('spawn_z'),
