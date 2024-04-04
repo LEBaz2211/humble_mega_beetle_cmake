@@ -107,9 +107,9 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(default_robot_launch_path),
             condition=UnlessCondition(LaunchConfiguration("custom_robot")),
-            launch_arguments={
-                'base_serial_port': LaunchConfiguration("base_serial_port")
-            }.items()
+            # launch_arguments={
+            #     'base_serial_port': LaunchConfiguration("base_serial_port")
+            # }.items()
         ),
 
         IncludeLaunchDescription(
