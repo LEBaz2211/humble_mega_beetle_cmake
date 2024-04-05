@@ -81,11 +81,11 @@ def generate_launch_description():
         #     description='micro-ROS udp/tcp port number'
         # ),
 
-        DeclareLaunchArgument(
-            name='odom_topic', 
-            default_value='/odom',
-            description='EKF out odometry topic'
-        ),
+        # DeclareLaunchArgument(
+        #     name='odom_topic', 
+        #     default_value='/odom',
+        #     description='EKF out odometry topic'
+        # ),
         
         DeclareLaunchArgument(
             name='joy', 
@@ -93,16 +93,16 @@ def generate_launch_description():
             description='Use Joystick'
         ),
 
-        Node(
-            package='robot_localization',
-            executable='ekf_node',
-            name='ekf_filter_node',
-            output='screen',
-            parameters=[
-                ekf_config_path
-            ],
-            remappings=[("odometry/filtered", LaunchConfiguration("odom_topic"))]
-        ),
+        # Node(
+        #     package='robot_localization',
+        #     executable='ekf_node',
+        #     name='ekf_filter_node',
+        #     output='screen',
+        #     parameters=[
+        #         ekf_config_path
+        #     ],
+        #     remappings=[("odometry/filtered", LaunchConfiguration("odom_topic"))]
+        # ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(default_robot_launch_path),
