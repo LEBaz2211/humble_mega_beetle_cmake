@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="base" params="length width height mass wheel_radius wheel_pos_z">
-    <link name="world"></link>
+    <link name="odom"></link>
 
     <joint name="base_joint" type="fixed">
       <origin xyz="1.5 1.0 0" rpy="0 0 0"/>
-      <parent link="world"/>
+      <parent link="odom"/>
       <child link="base_footprint"/>   
     </joint>
 
