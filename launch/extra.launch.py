@@ -31,15 +31,15 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        # IncludeLaunchDescription(
-        #     PythonLaunchDescriptionSource(laser_launch_path),
-        #     launch_arguments={
-        #         'sensor': 'a1',
-        #         'topic_name': '/base/scan/unfiltered',
-        #         'frame_id': 'base_laser',
-        #         'lidar_serial_port': '/dev/ttyUSB0'
-        #     }.items()   
-        # ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(laser_launch_path),
+            launch_arguments={
+                'sensor': 'a1',
+                'topic_name': '/base/scan/unfiltered',
+                'frame_id': 'base_laser',
+                'lidar_serial_port': '/dev/ttyUSB0'
+            }.items()   
+        ),
         Node(
             package="laser_filters",
             executable="scan_to_scan_filter_chain",
@@ -47,8 +47,8 @@ def generate_launch_description():
                 laser_filter_config_path
             ],
             remappings=[
-                ('/scan', '/base/scan/unfiltered'),
-                ('/scan_filtered', '/base/scan')
+                ('/scan', '/scan/unfiltered'),
+                ('/scan_filtered', '/scan')
             ]
         )
     ])
