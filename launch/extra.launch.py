@@ -34,7 +34,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(laser_launch_path),
             launch_arguments={
-                'sensor': 'rplidar',
+                'sensor': 'a2',
                 'topic_name': '/base/scan/unfiltered',
                 'frame_id': 'base_laser',
                 'lidar_serial_port': '/dev/ttyUSB1'
