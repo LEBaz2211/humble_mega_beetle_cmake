@@ -19,6 +19,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.conditions import IfCondition, UnlessCondition
+from ament_index_python.packages import get_package_share_directory
+from launch.substitutions import PathJoinSubstitution
 
 
 def generate_launch_description():
@@ -48,6 +50,10 @@ def generate_launch_description():
 
     extra_launch_path = PathJoinSubstitution(
         [FindPackageShare('humble_mega_beetle_cmake'), 'launch', 'extra.launch.py']
+    )
+
+    laser_filter_config_path = PathJoinSubstitution(
+        [FindPackageShare('humble_mega_beetle_cmake'), 'config', 'angular_filter_example.yaml']
     )
 
     return LaunchDescription([
@@ -103,6 +109,11 @@ def generate_launch_description():
         #     ],
         #     remappings=[("odometry/filtered", LaunchConfiguration("odom_topic"))]
         # ),
+        Node(
+            package="laser_filters",
+            executable="scan_to_scan_filter_chain",
+            parameters=[laser_filter_config_path],
+        ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(default_robot_launch_path),
