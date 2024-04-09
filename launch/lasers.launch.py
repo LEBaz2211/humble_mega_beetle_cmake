@@ -142,36 +142,36 @@ def generate_launch_description():
             }]
         ),
 
-        # Node(
-        #     condition=LaunchConfigurationEquals('sensor', 'rplidar'),
-        #     name='rplidar_composition',
-        #     package='rplidar_ros',
-        #     executable='rplidar_composition',
-        #     output='screen',
-        #     remappings=[('scan', LaunchConfiguration('topic_name'))],
-        #     parameters=[{
-        #         'serial_port': '/dev/ttyUSB0',
-        #         'serial_baudrate': 115200,  # A1 / A2
-        #         'frame_id': LaunchConfiguration('frame_id'),
-        #         'inverted': False,
-        #         'angle_compensate': True,
-        #     }],
-        # ),
-
-        Node( 
-            condition=LaunchConfigurationEquals('sensor', 'xv11'),
-            name='xv_11_driver',
-            package='xv_11_driver',
-            executable='xv_11_driver',
+        Node(
+            condition=LaunchConfigurationEquals('sensor', 'rplidar'),
+            name='rplidar_composition',
+            package='rplidar_ros',
+            executable='rplidar_composition',
             output='screen',
             remappings=[('scan', LaunchConfiguration('topic_name'))],
             parameters=[{
-                'port': '/dev/ttyACM0',
-                'baud_rate': 115200, 
+                'serial_port': '/dev/ttyUSB0',
+                'serial_baudrate': 115200,  # A1 / A2
                 'frame_id': LaunchConfiguration('frame_id'),
-                'firmware_version': 2
+                'inverted': False,
+                'angle_compensate': True,
             }],
         ),
+
+        # Node( 
+        #     condition=LaunchConfigurationEquals('sensor', 'xv11'),
+        #     name='xv_11_driver',
+        #     package='xv_11_driver',
+        #     executable='xv_11_driver',
+        #     output='screen',
+        #     remappings=[('scan', LaunchConfiguration('topic_name'))],
+        #     parameters=[{
+        #         'port': '/dev/ttyACM0',
+        #         'baud_rate': 115200, 
+        #         'frame_id': LaunchConfiguration('frame_id'),
+        #         'firmware_version': 2
+        #     }],
+        # ),
 
         # Node(
         #     condition=LaunchConfigurationEquals('sensor', 'ldlidar'),
@@ -187,74 +187,74 @@ def generate_launch_description():
         #     ]
         # ),
 
-        Node(
-            condition=LaunchConfigurationEquals('sensor', 'ld06'),
-            package='ldlidar_stl_ros2',
-            executable='ldlidar_stl_ros2_node',
-            name='ld06',
-            output='screen',
-            parameters=[
-                {'product_name': 'LDLiDAR_LD06'},
-                {'topic_name': LaunchConfiguration('topic_name')},
-                {'frame_id': LaunchConfiguration('frame_id')},
-                {'comm_mode': LaunchConfiguration('lidar_transport')},
-                {'port_name': LaunchConfiguration('lidar_serial_port')},
-                {'port_baudrate': 230400},
-                {'server_ip': LaunchConfiguration('lidar_server_ip')},
-                {'server_port': LaunchConfiguration('lidar_server_port')},
-                {'laser_scan_dir': True},
-                {'bins': 456},
-                {'enable_angle_crop_func': False},
-                {'angle_crop_min': 135.0},
-                {'angle_crop_max': 225.0}
-            ]
-        ),
+        # Node(
+        #     condition=LaunchConfigurationEquals('sensor', 'ld06'),
+        #     package='ldlidar_stl_ros2',
+        #     executable='ldlidar_stl_ros2_node',
+        #     name='ld06',
+        #     output='screen',
+        #     parameters=[
+        #         {'product_name': 'LDLiDAR_LD06'},
+        #         {'topic_name': LaunchConfiguration('topic_name')},
+        #         {'frame_id': LaunchConfiguration('frame_id')},
+        #         {'comm_mode': LaunchConfiguration('lidar_transport')},
+        #         {'port_name': LaunchConfiguration('lidar_serial_port')},
+        #         {'port_baudrate': 230400},
+        #         {'server_ip': LaunchConfiguration('lidar_server_ip')},
+        #         {'server_port': LaunchConfiguration('lidar_server_port')},
+        #         {'laser_scan_dir': True},
+        #         {'bins': 456},
+        #         {'enable_angle_crop_func': False},
+        #         {'angle_crop_min': 135.0},
+        #         {'angle_crop_max': 225.0}
+        #     ]
+        # ),
 
-        Node(
-            condition=LaunchConfigurationEquals('sensor', 'ld19'),
-            package='ldlidar_stl_ros2',
-            executable='ldlidar_stl_ros2_node',
-            name='ld19',
-            output='screen',
-            parameters=[
-                {'product_name': 'LDLiDAR_LD19'},
-                {'topic_name': LaunchConfiguration('topic_name')},
-                {'frame_id': LaunchConfiguration('frame_id')},
-                {'comm_mode': LaunchConfiguration('lidar_transport')},
-                {'port_name': LaunchConfiguration('lidar_serial_port')},
-                {'port_baudrate': 230400},
-                {'server_ip': LaunchConfiguration('lidar_server_ip')},
-                {'server_port': LaunchConfiguration('lidar_server_port')},
-                {'laser_scan_dir': True},
-                {'bins': 456},
-                {'enable_angle_crop_func': False},
-                {'angle_crop_min': 135.0},
-                {'angle_crop_max': 225.0}
-            ]
-        ),
+        # Node(
+        #     condition=LaunchConfigurationEquals('sensor', 'ld19'),
+        #     package='ldlidar_stl_ros2',
+        #     executable='ldlidar_stl_ros2_node',
+        #     name='ld19',
+        #     output='screen',
+        #     parameters=[
+        #         {'product_name': 'LDLiDAR_LD19'},
+        #         {'topic_name': LaunchConfiguration('topic_name')},
+        #         {'frame_id': LaunchConfiguration('frame_id')},
+        #         {'comm_mode': LaunchConfiguration('lidar_transport')},
+        #         {'port_name': LaunchConfiguration('lidar_serial_port')},
+        #         {'port_baudrate': 230400},
+        #         {'server_ip': LaunchConfiguration('lidar_server_ip')},
+        #         {'server_port': LaunchConfiguration('lidar_server_port')},
+        #         {'laser_scan_dir': True},
+        #         {'bins': 456},
+        #         {'enable_angle_crop_func': False},
+        #         {'angle_crop_min': 135.0},
+        #         {'angle_crop_max': 225.0}
+        #     ]
+        # ),
 
-        Node(
-            condition=LaunchConfigurationEquals('sensor', 'stl27l'),
-            package='ldlidar_stl_ros2',
-            executable='ldlidar_stl_ros2_node',
-            name='stl27l',
-            output='screen',
-            parameters=[
-                {'product_name': 'LDLiDAR_STL27L'},
-                {'topic_name': LaunchConfiguration('topic_name')},
-                {'frame_id': LaunchConfiguration('frame_id')},
-                {'comm_mode': LaunchConfiguration('lidar_transport')},
-                {'port_name': LaunchConfiguration('lidar_serial_port')},
-                {'port_baudrate': 921600},
-                {'server_ip': LaunchConfiguration('lidar_server_ip')},
-                {'server_port': LaunchConfiguration('lidar_server_port')},
-                {'laser_scan_dir': True},
-                {'bins': 2160},
-                {'enable_angle_crop_func': False},
-                {'angle_crop_min': 135.0},
-                {'angle_crop_max': 225.0}
-            ]
-        ),
+        # Node(
+        #     condition=LaunchConfigurationEquals('sensor', 'stl27l'),
+        #     package='ldlidar_stl_ros2',
+        #     executable='ldlidar_stl_ros2_node',
+        #     name='stl27l',
+        #     output='screen',
+        #     parameters=[
+        #         {'product_name': 'LDLiDAR_STL27L'},
+        #         {'topic_name': LaunchConfiguration('topic_name')},
+        #         {'frame_id': LaunchConfiguration('frame_id')},
+        #         {'comm_mode': LaunchConfiguration('lidar_transport')},
+        #         {'port_name': LaunchConfiguration('lidar_serial_port')},
+        #         {'port_baudrate': 921600},
+        #         {'server_ip': LaunchConfiguration('lidar_server_ip')},
+        #         {'server_port': LaunchConfiguration('lidar_server_port')},
+        #         {'laser_scan_dir': True},
+        #         {'bins': 2160},
+        #         {'enable_angle_crop_func': False},
+        #         {'angle_crop_min': 135.0},
+        #         {'angle_crop_max': 225.0}
+        #     ]
+        # ),
         OpaqueFunction(function=launch_rplidar)
     ])
 
