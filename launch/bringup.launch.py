@@ -59,7 +59,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             name='extra', 
-            default_value='false',
+            default_value='true',
             description='Launch extra launch file'
         ),
 
