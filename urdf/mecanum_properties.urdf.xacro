@@ -14,7 +14,7 @@
   <xacro:property name="wheel_torque" value="20" />
 
   <xacro:property name="laser_pose">
-    <origin xyz="-0.099 0.1275 0.146" rpy="0 3.14 1.57"/>
+    <origin xyz="-0.099 0.1275 0.046" rpy="0 3.14 1.57"/>
   </xacro:property>
 
   <xacro:property name="depth_sensor_pose">
